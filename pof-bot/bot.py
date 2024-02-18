@@ -26,7 +26,7 @@ def register_handlers(bot: telebot.TeleBot):
         handlers.finder, content_types=["location"], pass_bot=True
     )
     bot.register_message_handler(
-        handlers.echo_all, unc=lambda message: True, pass_bot=True
+        handlers.echo_all, func=lambda message: True, pass_bot=True
     )
 
     bot.register_callback_query_handler(
@@ -49,3 +49,4 @@ print("token:", TOKEN)
 print("username:", me.username)
 
 bot.infinity_polling()
+
