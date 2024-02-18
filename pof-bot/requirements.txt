@@ -1,3 +1,5 @@
 numpy==1.26.4
 pyTelegramBotAPI==4.8.0
 python-decouple==3.6
+peewee==3.17.1
+sqlite-web==0.6.3
