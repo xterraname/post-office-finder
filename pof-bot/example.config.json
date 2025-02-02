@@ -1,0 +1,12 @@
+{
+    "bot": {
+      "local": {
+        "username": "test_example_bot",
+        "token": "1111111111:AAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "dev": {
+        "username": "example_bot",
+        "token": "1111111111:AAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      }
+    }
+  }
