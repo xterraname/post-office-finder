@@ -6,4 +6,4 @@ __pycache__/
 
 logs.txt
 bot.db
-
+config.json
