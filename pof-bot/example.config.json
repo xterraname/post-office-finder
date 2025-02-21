@@ -8,5 +8,6 @@
       "username": "YOUR_BOT_USERNAME",
       "token": "YOUR_DEV_BOT_TOKEN"
     }
-  }
+  },
+  "admins": [1234567890]
 }

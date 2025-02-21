@@ -3,9 +3,11 @@ import logging
 import sys
 
 import telebot
+from telebot.custom_filters import ChatFilter
 
 import handlers
-from config_handler import get_token
+import admin_handlers
+from config_handler import get_token, get_admin_ids
 
 
 
@@ -48,6 +50,13 @@ def register_handlers(bot: telebot.TeleBot):
     Args:
         bot (telebot.TeleBot): The bot instance to register handlers for.
     """
+    # Register admins handlers
+    bot.register_message_handler(
+        admin_handlers.admin_command,
+        chat_id=get_admin_ids(),
+        commands=["admin"],
+        pass_bot=True
+    )
     # Register welcome message handler for /start and /help commands
     bot.register_message_handler(
         handlers.send_welcome,
@@ -89,6 +98,7 @@ def main():
 
     # Create a new TeleBot instance with HTML parsing enabled
     bot = telebot.TeleBot(TOKEN, parse_mode="html")
+    bot.add_custom_filter(ChatFilter())
     register_handlers(bot)
 
     try:

@@ -1,5 +1,6 @@
 import json
 import os
+from typing import List
 
 def load_config(config_path: str) -> dict:
     """
@@ -40,3 +41,9 @@ def get_token(mode: str = "local") -> str:
         return CONFIG['bot'][mode]['token']
     except KeyError as e:
         raise KeyError(f"Token for mode '{mode}' not found in the configuration.") from e
+
+def get_admin_ids() -> List[int]:
+    try:
+        return CONFIG['admins']
+    except KeyError as e:
+        return []

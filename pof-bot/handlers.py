@@ -41,8 +41,7 @@ def send_welcome(message: Message, bot: TeleBot):
         if created:
             logging.info(f"New user: {db_user.user_id}")
     except Exception as e:
-        # Replace print with logging if a logger is available
-        print(f"Error creating or retrieving user: {e}")
+        logging.error(f"Error creating or retrieving user: {e}")
 
     bot.send_message(message.chat.id, texts.START_MSG)
 
